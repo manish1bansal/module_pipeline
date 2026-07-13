@@ -9,7 +9,12 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: az login
-        run: az login --service-principal --username 85fa430d-e8e4-44e6-bc7a-e84c9eec07a1 --password f1Z8Q~f_fln18PLB3EzfH4S~uFFj_p6UBLpqwbBH --tenant 84ce4985-6ead-44e3-8708-7f892d770fdd
+        uses: azure/login@v2
+        with:
+          client-id: 9be92700-3468-4e51-a39b-2d2ade1033cb
+          client-secret: fed012a8-c829-41df-bbf5-330c35ade32d
+          tenant-id: d9e397f1-a75f-4aef-8870-84abaee8c5ec
+          subscription-id: 2121638c-2247-44a7-8b82-697632b4b79a
       - name: init
         run: terraform init
       - name: plan
